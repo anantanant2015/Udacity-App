@@ -1,0 +1,15 @@
+.heading {
+	font-size:50px;
+	color: #6746b4;
+	background-color: #b0c4de7d;
+	font-style: italic;
+}
+
+textarea {
+	height:400px;
+	width:100%;
+}
+
+input {
+	background-color:red;
+}

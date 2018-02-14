@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+<form method=post>
+	<h2>Signup</h2>
+	<div class="leftcolumn">
+		<div class="card">
+			<table>
+				<tr>
+					<td>
+						<label>Project</label>
+					</td>
+					<td>
+						<input type="text" name="project" value="{{project}}">
+					</td>
+					<td>
+						<div class="error" name="projecterror">{{projecterror}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>App Key</label>
+					</td>
+					<td>
+						<input type="text" name="appkey" value="{{appkey}}">
+					</td>
+					<td>
+						<div class="error" name="appkeyerror">{{appkeyerror}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="submit" name="submit" text="Submit">
+					</td>
+					<td>
+					</td>
+				</tr>
+			</tabel>
+		</div>
+	</div>
+</form>
+{% endblock %}

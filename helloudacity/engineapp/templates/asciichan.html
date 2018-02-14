@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	<div class="leftcolumn">
+		<div class="card">
+			<form method="post">
+				<div>
+					<label>Title</label>
+				</div>
+				<div>
+					<input type="text" name="arttitle" value="{{arttitle}}">
+				</div>
+				<div>
+					<label>Art</label>
+				</div>
+				<div>
+					<textarea name="arttxt" class="textarea">{{arttxt}}</textarea>
+				</div>
+				<div>
+					<input type="submit" name="submit" text="Submit">
+				</div>
+			</form>
+		</div>
+		{% if arts %}
+			{% for art in arts %}
+				<div class="card">
+					<h2>{{art.title}}</h2>
+					<h5>{{art.created}}</h5>
+					<br>
+					<pre>{{art.arttxt}}</pre>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+	<div class="rightcolumn">
+		<!-- <img src="https://maps.googleapis.com/maps/api/staticmap?size=640x640&scale=2&markers=color:red|label:S|62.107733,-5.541936&markers=color:red|label:S|62.107733,-155.541936"> -->
+		{% if geo_url and artcoords %}
+			<img src="{{geo_url}}">
+		{% endif %}	
+	</div>
+{% endblock %}

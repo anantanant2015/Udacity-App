@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	{% if username and wkedit and contentedit %}
+		<div class="leftcolumn">
+			<div class="card">
+				<form method="post">
+					<textarea type="text" name="content" class="textarea">{{contentedit}}</textarea>
+					<br>
+					<input type="submit" Value="Save">
+				</form>
+			</div>
+		</div>
+	{% elif content %}
+		{{content}}
+	{% else %}
+		<h2>Wiki Home Page, Please login!</h2>
+	{% endif %}	
+{% endblock %}

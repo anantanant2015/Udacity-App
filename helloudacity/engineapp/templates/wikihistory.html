@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	{% if username and wk and ishistorypage %}
+		<div class="leftcolumn">
+			<div class="card" style="overflow-x:auto;">
+				<table>
+					{% if wk %}
+						<tr>
+							<th><b>URL</b></th>
+							<th><b>Context</b></th>
+							<th><b>Created On</b></th>
+							<th><b>View</b></th>
+							<th><b>Edit</b></th>
+						</tr>
+					{% endif %}
+					{% for content in wk %}
+						<tr>
+							<td>{{content.wkurl}}</td>
+							<td>{{content.content}}</td>
+							<td>{{content.created}}</td>
+							<td><a href="{{content.wkurl}}?wkid={{content.key().id()}}" class="link">View</a></td>
+							<td><a href="{{content.wkurl}}?wkid={{content.key().id()}}&iseditpage=True" class="link">Edit</a></td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	{% endif %}	
+{% endblock %}

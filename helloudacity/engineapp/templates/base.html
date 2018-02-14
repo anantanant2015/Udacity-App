@@ -1,0 +1,64 @@
+{% if tojson %}
+	{{tojson}}
+{% else %}
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>
+				{% block title %}
+				{% endblock %}
+			</title>
+			<style>
+				{{style}}
+			</style>
+		</head>
+		<body>
+			{% if header %}
+				<div class="header">
+					<h2>{{header}}</h2>
+				</div>
+			{% endif %}
+			{% if links %}
+				<div class="topnav">
+					{% for link in links %}
+						{% if link=='/' %}
+							<a href="{{link}}" class="link">Home</a>
+						{% elif link=='/logout' and username %}
+							<a href="{{link}}" class="link"><b>{{username}}</b> (logout)</a>
+						{% elif link=='/edit' and edit_path_info %}
+							<a href="{{edit_path_info}}" class="link">{{link}}</a>
+						{% elif link=='/history' and history_path_info %}
+							<a href="{{history_path_info}}" class="link">{{link}}</a>
+						{% else %}
+							<a href="{{link}}" class="link">{{link}}</a>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			
+			<div class="row">
+				{% if error %}
+					{% block error %}
+						<div class="error">Error Found: "{{error}}"</div>
+					{% endblock %}
+				{% endif %}
+				{% block body %}
+				{% endblock %}
+			</div>
+			
+
+			{% if footer %}
+				<div style="height:100px;" class="bottomdiv">
+				</div>
+				<div class="footer">
+					<h5>{{info}} (info)</h5>
+					<h2>{{footer}}</h2>
+				</div>
+			{% endif %}
+			
+
+
+		</body>
+	</html>
+{% endif %}

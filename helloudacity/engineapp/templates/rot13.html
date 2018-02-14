@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	<form method=post>
+		<div class="leftcolumn">
+			<div class="card">
+				<h2>Enter Text for ROT13...</h2>
+				<textarea name="txtarea" class="textarea">{{txt}}</textarea>
+				<input type="submit">
+			</div>
+		</div>
+	</form>
+{% endblock %}

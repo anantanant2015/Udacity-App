@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+	<div class="leftcolumn">
+		<h2>FizzBuzz</h2>
+
+		{% if n %}
+			<div class="card">
+				<ol>
+				{% for x in range(1,n+1) %}
+					<li>
+					{% if x%5==0 %}
+						{% if x%3==0 %}
+							FizzBuzz
+						{% else %}
+							Buzz
+						{% endif %}
+					{% elif x%3==0 %}
+						Fizz
+					{% else %}
+						x
+					{% endif %}
+					</li>
+				{% endfor %}
+				</ol>
+			</div>
+		{% elif not n %}
+			<a href="/fizzbuzz?n=10" class="link">Click for FizzBuzz of 10</a>
+		{% endif %}
+	</div>
+{% endblock %}

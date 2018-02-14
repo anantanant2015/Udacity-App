@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{title}}
+{% endblock %}
+<!-- %a %d %b %y, %I:%M:%S:%f %p -->
+{% block body %}
+	{% if posts or post %}
+		<div class="leftcolumn">
+			{% for p in posts %}
+				<div class="card">
+					<a href="/blog?postid={{p.postid}}"><h2>{{p.subject}}</h2></a>
+					<h5>{{p.created}}</h5>
+					<br>
+					<p>{{p.content}}</p>
+				</div>
+				<br>
+			{% endfor %}
+			<!-- {% if post %}
+				<div class="card">
+					<h2>{{post.subject}}</h2>
+					<h5>{post.created.strftime("%a %d %b %y, %I:%M %p")}}</h5>
+					<br>
+					<p>{{post.content}}</p>
+				</div>
+				<br>
+			{% endif %} -->
+
+		</div>
+		<div class="rightcolumn">
+			<div class="card">
+				<h2>About Me</h2>
+			    <p>Place your posts with nice catching subjects, and your post will be visible to the world.</p>
+    		</div>
+    		{% if not postid %}
+				<div class="card">
+					<h2>Top 10 Posts</h2>
+					{% for p in posts %}
+						<a href="/blog?postid={{p.postid}}"><h2>{{p.subject}}</h2></a>
+						<br>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+		
+	{% endif %}
+{% endblock %}

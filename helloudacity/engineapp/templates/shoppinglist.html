@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+	{% block title %}
+		{{title}}
+	{% endblock %}
+
+	{% block body %}
+		<form>
+			<h2>Add food.</h2>
+			<div class="leftcolumn">
+				<div class="card">
+					<table>
+						<tr>
+							<td>
+								<h4>Item</h4>
+							</td>
+							<td>
+								<input type="text" name="food">
+							</td>
+							<td>
+								<input type="submit">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="rightcolumn">
+				{% for item in food %}
+					<input type="hidden" name="food" value="{{item}}">
+				{% endfor %}
+				<div class="card">
+					<h4>List Items...</h4>
+					<ul>
+					{% for item in food %}
+						<li>{{item}}</li>
+					{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</form>
+	{% endblock %}

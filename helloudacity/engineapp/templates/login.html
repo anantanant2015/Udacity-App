@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% block body %}
+<form method=post>
+	<h2>Signup</h2>
+	<div class="leftcolumn">
+		<div class="card">
+			<table>
+				<tr>
+					<td>
+						<label>Username</label>
+					</td>
+					<td>
+						<input type="text" name="username" value="{{username}}">
+					</td>
+					<td>
+						<div class="error" name="usernameerror">{{usernameerror}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Password</label>
+					</td>
+					<td>
+						<input type="password" name="password" value="">
+					</td>
+					<td>
+						<div class="error" name="passworderror">{{passworderror}}</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="submit" name="submit" text="Submit">
+					</td>
+					<td>
+					</td>
+				</tr>
+			</tabel>
+		</div>
+	</div>
+</form>
+{% endblock %}

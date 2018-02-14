@@ -1,0 +1,60 @@
+
+.heading {
+    font-size:50px;
+    color: #6746b4;
+    background-color: #b0c4de7d;
+    font-style: italic;
+    width:auto;}
+.textarea {
+    height:400px;
+    width:100%;}
+.error {
+    color: red;
+    text-overflow:ellipsis;
+    word-break:keep-all;
+    text-transform: capitalize;
+}
+.link {
+    color:blue;
+    font-size:25px;
+}
+.center {
+    width:100px;
+    right:0px;
+    text-align:center;
+    float:right;
+    font-size:18px;
+}
+html {
+    height: 97%;
+    overflow: hidden;
+}
+body {
+    height: 97%;
+    width:auto;
+}
+form {
+    background-color: lightyellow;
+    color: saddlebrown;
+    height: 97%;
+    width:100%;
+    overflow:auto;
+}
+table {
+    background-color: wheat;
+    object-position: center;
+    margin: 10% 25% 10% 25%;
+    width: 50%;
+    height: 30%;
+    border-radius: 10px;
+    border-width: 10px;
+}
+td {
+    width:5%;
+}
+input {
+    border-radius: 5px;
+    border-color: ivory;
+    background-color: floralwhite;
+    color: chocolate;
+}
